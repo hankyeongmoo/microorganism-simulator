@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Runtime.CompilerServices;
 
 public class Manager : MonoBehaviour
 {
@@ -30,6 +32,18 @@ public class Manager : MonoBehaviour
     public void ResetSimulation()
     {
         resetSign = true;
+
+        StartCoroutine(ResetCRT());
+    }
+
+    IEnumerator ResetCRT()
+    {
+        yield return null;
+        if (resetSign)
+        {
+            resetSign = false;
+            SimulStart();
+        }
     }
 
     void OnTriggerStay2D(Collider2D other)
