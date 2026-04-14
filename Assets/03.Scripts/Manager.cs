@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 public class Manager : MonoBehaviour
 {
@@ -65,5 +64,25 @@ public class Manager : MonoBehaviour
 
             SimulStart();
         }
+    }
+
+    public void __Spawn_Englena()
+    {
+        SpawnBug(1, 0);
+    }
+
+    public void __Spawn_Paramecium()
+    {
+        SpawnBug(1, 1);
+    }
+
+    public void __Spawn_Didinium()
+    {
+        SpawnBug(1, 2);
+    }
+
+    public void __Spawn_Bacillus()
+    {
+        SpawnBug(1, 3);
     }
 }
