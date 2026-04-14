@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7261456924376675906}
   - component: {fileID: 8258425857071793303}
-  - component: {fileID: 1522417829539476915}
   - component: {fileID: 5779541064063935503}
-  m_Layer: 0
+  - component: {fileID: 8258635306814171533}
+  - component: {fileID: 3040122769054102016}
+  - component: {fileID: 3032981734771570613}
+  m_Layer: 7
   m_Name: "1\uCC28 \uC18C\uBE44\uC790"
   m_TagString: 1
   m_Icon: {fileID: 0}
@@ -93,30 +95,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &1522417829539476915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5072384889642509790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 996a3933540bcb54c99f108a2cb00ef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoveBug
-  bugType: 1
-  moveSpeed: 10
-  maxEnergy: 50
-  energyGainRate: 5
-  energyConsumptionRate: 1
-  maxWaste: 100
-  wasteProductionRate: 1
-  maxDuplicateTime: 30
-  minDuplicateTime: 20
-  duplicateEnergy: 30
-  duplicateProbability: 0.1
-  deathRateFromInfection: 0.01
 --- !u!58 &5779541064063935503
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -148,6 +126,86 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
+--- !u!114 &8258635306814171533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072384889642509790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29e349d3948bf24781d6a419d6878c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Paramecium
+  energy: 50
+  maxEnergy: 100
+  speed: 2
+  detectionRange: 5
+  energyLossRate: 1
+--- !u!50 &3040122769054102016
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072384889642509790}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &3032981734771570613
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072384889642509790}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

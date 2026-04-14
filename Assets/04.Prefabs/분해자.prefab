@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7943418813132358249}
   - component: {fileID: 136527629076200581}
-  - component: {fileID: 5377715617531827051}
   - component: {fileID: -504004523111412163}
-  m_Layer: 0
+  - component: {fileID: -3646038205694941359}
+  - component: {fileID: 3822219320460894769}
+  m_Layer: 7
   m_Name: "\uBD84\uD574\uC790"
   m_TagString: 3
   m_Icon: {fileID: 0}
@@ -93,30 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5377715617531827051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454915320795582032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 996a3933540bcb54c99f108a2cb00ef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoveBug
-  bugType: 3
-  moveSpeed: 2
-  maxEnergy: 50
-  energyGainRate: 10
-  energyConsumptionRate: 0.2
-  maxWaste: 200
-  wasteProductionRate: 1
-  maxDuplicateTime: 300
-  minDuplicateTime: 180
-  duplicateEnergy: 30
-  duplicateProbability: 0.1
-  deathRateFromInfection: 0.05
 --- !u!70 &-504004523111412163
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -154,3 +131,47 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &-3646038205694941359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454915320795582032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f631bbd5460d5c0438c4583432eb79c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bacillus
+  energy: 50
+  maxEnergy: 100
+  speed: 2
+  detectionRange: 5
+  energyLossRate: 1
+--- !u!50 &3822219320460894769
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454915320795582032}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

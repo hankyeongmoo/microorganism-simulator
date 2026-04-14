@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4909829973815538376}
   - component: {fileID: 2028554563650857464}
-  - component: {fileID: 6977254416871329868}
   - component: {fileID: 7825601874332578756}
-  m_Layer: 0
+  - component: {fileID: 526006399552222066}
+  - component: {fileID: 989053213147827907}
+  m_Layer: 7
   m_Name: "2\uCC28 \uC18C\uBE44\uC790"
   m_TagString: 2
   m_Icon: {fileID: 0}
@@ -93,30 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &6977254416871329868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5109986869647096534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 996a3933540bcb54c99f108a2cb00ef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoveBug
-  bugType: 2
-  moveSpeed: 30
-  maxEnergy: 100
-  energyGainRate: 3
-  energyConsumptionRate: 0.1
-  maxWaste: 10
-  wasteProductionRate: 1
-  maxDuplicateTime: 400
-  minDuplicateTime: 350
-  duplicateEnergy: 70
-  duplicateProbability: 0.1
-  deathRateFromInfection: 0.01
 --- !u!60 &7825601874332578756
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -167,3 +144,47 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 1
+--- !u!114 &526006399552222066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5109986869647096534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ef3a9f10da6544e96007607252f980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Didinium
+  energy: 50
+  maxEnergy: 100
+  speed: 2
+  detectionRange: 5
+  energyLossRate: 1
+--- !u!50 &989053213147827907
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5109986869647096534}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
