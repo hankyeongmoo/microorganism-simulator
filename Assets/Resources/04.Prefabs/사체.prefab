@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1823271261786941306
+--- !u!1 &8038433968876615695
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2909117224913918254}
-  - component: {fileID: 410409594355069025}
-  - component: {fileID: -5341263106912181077}
-  - component: {fileID: -1794846311593091240}
-  - component: {fileID: 7386557603053359682}
-  m_Layer: 7
-  m_Name: "\uC0DD\uC0B0\uC790"
-  m_TagString: 0
+  - component: {fileID: 4829705419708427937}
+  - component: {fileID: 1901901977064896518}
+  - component: {fileID: 3653174280678739658}
+  - component: {fileID: -5753389561530329831}
+  - component: {fileID: 7401204651053284603}
+  m_Layer: 0
+  m_Name: "\uC0AC\uCCB4"
+  m_TagString: diedBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2909117224913918254
+--- !u!4 &4829705419708427937
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823271261786941306}
+  m_GameObject: {fileID: 8038433968876615695}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &410409594355069025
+--- !u!212 &1901901977064896518
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823271261786941306}
+  m_GameObject: {fileID: 8038433968876615695}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,23 +84,23 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.78431374, b: 0, a: 1}
+  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &-5341263106912181077
-BoxCollider2D:
+--- !u!60 &3653174280678739658
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823271261786941306}
+  m_GameObject: {fileID: 8038433968876615695}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -132,40 +132,39 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &-1794846311593091240
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.25}
+      - {x: -0.5, y: 0}
+      - {x: 0, y: -0.25}
+      - {x: 0.5, y: 0}
+  m_UseDelaunayMesh: 1
+--- !u!114 &-5753389561530329831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823271261786941306}
+  m_GameObject: {fileID: 8038433968876615695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e0e47e5bccf324d8afa347d6fc63ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 28f793f9fbb10ec4ca0b9f1c74233a3e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Euglena
-  energy: 50
-  maxEnergy: 100
-  speed: 2
-  detectionRange: 5
-  energyLossRate: 1
-  isLightAvailable: 1
---- !u!50 &7386557603053359682
+  m_EditorClassIdentifier: Assembly-CSharp::diedBug
+--- !u!50 &7401204651053284603
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823271261786941306}
+  m_GameObject: {fileID: 8038433968876615695}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0

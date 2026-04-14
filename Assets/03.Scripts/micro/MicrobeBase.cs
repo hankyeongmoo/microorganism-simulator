@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public abstract class MicrobeBase : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public abstract class MicrobeBase : MonoBehaviour
     public float detectionRange = 5f;
     public float energyLossRate = 1f;
 
+    private Vector2 randomDir;
+    private float survivalTime;
+    private float reproductionCooldown = 5f;
+
     protected Rigidbody2D rb;
 
     protected virtual void Start()
@@ -18,19 +23,35 @@ public abstract class MicrobeBase : MonoBehaviour
         {
             Debug.LogError($"{gameObject.name}에 Rigidbody2D가 없습니다! 컴포넌트를 추가해주세요.");
         }
+        survivalTime = 0f;
+        StartCoroutine(MoveRandomly());
     }
 
     protected virtual void Update()
     {
+        // 생존 시간 증가
+        survivalTime += Time.deltaTime;
+
+        // 번식 쿨다운 감소
+        if (reproductionCooldown >= 0)
+        {
+            reproductionCooldown -= Time.deltaTime;
+        }
+        else
+        {
+            reproductionCooldown = 0;
+        }
+
         // 생존 에너지 소모
         energy -= energyLossRate * Time.deltaTime;
         
         if (energy <= 0) Die();
         
         // 에너지 80% 이상일 때 번식
-        if (energy >= maxEnergy * 0.8f) 
+        if (energy >= maxEnergy * 0.8f && reproductionCooldown == 0) 
         {
             Reproduce();
+            reproductionCooldown = 10f; // 번식 후 쿨다운 초기화
         }
     }
 
@@ -38,11 +59,21 @@ public abstract class MicrobeBase : MonoBehaviour
     {
         if (rb == null) return;
 
-        rb.linearVelocity = transform.up * speed;
+        rb.linearVelocity = randomDir * speed;
         
         if (Random.value < 0.01f) 
         {
             transform.Rotate(0, 0, Random.Range(-45f, 45f));
+        }
+    }
+
+    IEnumerator MoveRandomly()
+    {
+        while (true)
+        {
+            randomDir = new Vector2(Random.Range(-1f, 1), Random.Range(-1f, 1)).normalized;
+            rb.linearVelocity = randomDir * speed;
+            yield return new WaitForSeconds(Random.Range(5f, 15f));
         }
     }
 
@@ -69,17 +100,28 @@ public abstract class MicrobeBase : MonoBehaviour
             }
         }
 
-        if (closestTarget != null)
+        if (closestTarget != null && survivalTime > 2f)
         {
             Vector2 direction = (closestTarget.position - transform.position).normalized;
             rb.linearVelocity = direction * speed;
             
-            // 먹이와 닿으면 에너지 흡수 및 먹이 파괴
+            // 먹이와 닿으면 에너지 흡수 및 먹이 파괴 및 시체 생성
             if (minDistance < 0.5f)
             {
                 energy += 30f; 
                 if (energy > maxEnergy) energy = maxEnergy;
-                Destroy(closestTarget.gameObject);
+
+                // 살아있는 것을 먹으면 사체 남김, 사체 먹으면 사체 안 남김
+                if (closestTarget.GetComponent<diedBug>() != null)
+                {
+                    Destroy(closestTarget.gameObject);
+                }
+                else
+                {
+                    Destroy(closestTarget.gameObject);
+                    Instantiate(Resources.Load<GameObject>("04.Prefabs/사체"), transform.position, Quaternion.identity);
+                }
+                
             }
         }
         else
@@ -90,7 +132,6 @@ public abstract class MicrobeBase : MonoBehaviour
 
     protected virtual void Die()
     {
-        // 사멸 시 유기물을 남기는 로직 등을 여기 추가할 수 있습니다.
         Destroy(gameObject);
     }
 

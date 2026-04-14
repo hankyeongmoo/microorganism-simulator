@@ -23,8 +23,11 @@ public class TopDownCamera : MonoBehaviour
         playerInput.actions["Move"].performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         playerInput.actions["Move"].canceled += ctx => moveInput = Vector2.zero;
         
-        playerInput.actions["Zoom"].performed += ctx => zoomInput = ctx.ReadValue<float>();
-        playerInput.actions["Zoom"].canceled += ctx => zoomInput = 0;
+        playerInput.actions["ZoomIn"].performed += ctx => zoomInput = ctx.ReadValue<float>();
+        playerInput.actions["ZoomIn"].canceled += ctx => zoomInput = 0;
+
+        playerInput.actions["ZoomOut"].performed += ctx => zoomInput = -ctx.ReadValue<float>();
+        playerInput.actions["ZoomOut"].canceled += ctx => zoomInput = 0;
     }
 
     void Update()
