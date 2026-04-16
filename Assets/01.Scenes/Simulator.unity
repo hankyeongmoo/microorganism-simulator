@@ -1893,6 +1893,7 @@ MonoBehaviour:
   - {fileID: 5109986869647096534, guid: c8630758ddb43b242b40c7c8a2fbb88c, type: 3}
   - {fileID: 1454915320795582032, guid: 03c5a27ac883a694ca2924b2e7598dec, type: 3}
   resetSign: 0
+  bugCounts: 1400000005000000030000000a000000
 --- !u!61 &1065956928
 BoxCollider2D:
   m_ObjectHideFlags: 0

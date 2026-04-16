@@ -5,6 +5,7 @@ public class Manager : MonoBehaviour
 {
     public GameObject[] bugs;
     [SerializeField] private bool resetSign = false; // 버튼으로 변수가 바뀜
+    public int[] bugCounts = new int[4]; // 0-생산자, 1-1차 소비자, 2-2차 소비자, 3-분해자
 
     void Start()
     {
@@ -21,10 +22,19 @@ public class Manager : MonoBehaviour
 
     public void SimulStart()
     {
-        SpawnBug(20, 0);
-        SpawnBug(5, 1);
-        SpawnBug(3, 2);
-        SpawnBug(10, 3);
+        if (bugCounts[0] == 0 && bugCounts[1] == 0 && bugCounts[2] == 0 && bugCounts[3] == 0)
+        {
+            bugCounts[0] = 20;
+            bugCounts[1] = 5;
+            bugCounts[2] = 3;
+            bugCounts[3] = 10;
+        }
+        
+
+        SpawnBug(bugCounts[0], 0);
+        SpawnBug(bugCounts[1], 1);
+        SpawnBug(bugCounts[2], 2);
+        SpawnBug(bugCounts[3], 3);
     }
 
     // 버튼으로 시뮬레이터 초기화

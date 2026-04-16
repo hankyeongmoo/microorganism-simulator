@@ -156,7 +156,7 @@ MonoBehaviour:
   maxEnergy: 100
   speed: 1
   detectionRange: 5
-  energyLossRate: 0
+  energyLossRate: 1
   isLightAvailable: 1
 --- !u!50 &7386557603053359682
 Rigidbody2D:
